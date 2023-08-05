@@ -60,4 +60,3 @@ electron运行
 
 ### 七、绑定事件
 目录：src/utils/events.js（记录了事件的方法）
->>>>>>> main
