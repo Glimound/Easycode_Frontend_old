@@ -2,15 +2,39 @@
     <div class="wrapper">
       <h1>EASYBUILD</h1>
       <div class="btn-box">
-        <button class="btn">预览</button>
-        <button class="btn">保存</button>
-        <button class="btn">发布</button>
+        <button class="btn" @click="previewApplication">预览</button>
+        <button class="btn" @click="saveLayout">保存</button>
+        <button class="btn" @click="releaseApplication">发布</button>
       </div>
     </div>
   </template>
   
   <script>
-  // Your JavaScript code goes here (if needed)
+    import exportSchema from '@/utils/layoutParser'
+    import * as api from '@/services/apiService'
+    export default {
+      methods: {
+        /**
+         * 导出并保存当前布局至远程服务器
+         */
+        saveLayout () {
+          console.log(exportSchema())
+          api.saveLayout(exportSchema())
+        },
+        /**
+         * 导出并发布当前应用
+         */
+        releaseApplication () {
+          api.releaseApplication(exportSchema())
+        },
+        /**
+         * 预览当前应用
+         */
+        previewApplication () {
+
+        }
+      }
+    }
   </script>
   
   <style scoped lang="less">

@@ -8,6 +8,7 @@
     </template>
     
     <script>
+    import { mapState } from 'vuex'
     import {genId} from '../utils/index'
     import {mountedComponent} from '../utils/index'
     import getComponent from '../templates/index'
@@ -89,13 +90,16 @@
         },
         data(){ 
             return{
-                components:[],
+                // components:[],
                 zIndex:0,
                 currComp:null,
                 isFirstComponentDragged: false,
             };
         },
         computed:{
+            ...mapState({
+                components: state => state.layoutList
+            }),
             setBorderStyle(){
                 let compWidth=0;
                 let compHeight=0;
@@ -119,9 +123,14 @@
                     return{}
                 }
             }
+        },
+        created() {
+            // 从远程获取布局
+            // this.$store.dispatch('initLayoutListFromRemote')
         }
     }
     </script>
+
     <style scoped lang="less">
     .wrapper{
         flex: 1;
