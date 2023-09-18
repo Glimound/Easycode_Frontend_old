@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-  <head-view></head-view>
-  <div class="content-box">
-  <left-view></left-view>
-  <center-view></center-view>
-  <right-view></right-view>
-  </div>
+    <head-view></head-view>
+    <div class="content-box">
+      <left-view></left-view>
+      <center-view></center-view>
+      <right-view></right-view>
+    </div>
   </div>
   
   </template>

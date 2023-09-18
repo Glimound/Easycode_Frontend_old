@@ -1,5 +1,7 @@
 //import Vue from "vue"
 import Vue from 'vue'
+import { nanoid } from 'nanoid'
+
 let getAttrStr=(attrs)=>{
     let attrStr=''
     attrs.forEach(item => {
@@ -9,12 +11,13 @@ let getAttrStr=(attrs)=>{
 }
 
 export const genId=()=>{ //获取随机ID
-    function s4(){
-        return Math.floor((1+Math.random())*0x10000)   //1-2
-        .toString(16)
-        .substring(1);
-    }
-    return s4()+s4()+'-'+s4();  //生成四位数随机数
+    // function s4(){
+    //     return Math.floor((1+Math.random())*0x10000)   //1-2
+    //     .toString(16)
+    //     .substring(1);
+    // }
+    // return s4()+s4()+'-'+s4();  //生成四位数随机数
+    return nanoid()
 }
   
   
