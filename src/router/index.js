@@ -9,6 +9,11 @@ const routes = [
         name: 'Home',
         component: () => import('@/views/Home'),
     },
+    {
+        path: '/deploy/:appid',
+        name: 'Deploy',
+        component: () => import('@/views/Deploy'),
+    }
 ]
 
 export default new Router({

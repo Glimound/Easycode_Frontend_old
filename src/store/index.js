@@ -85,6 +85,10 @@ const data = {
             state.curComponentIndex = index
         },
 
+        setComponentData(state, data) {
+            state.componentData = data
+        },
+
         setShapeStyle({ curComponent }, { top, left, width, height, rotate }) {
             if (top) curComponent.style.top = Math.round(top)
             if (left) curComponent.style.left = Math.round(left)
