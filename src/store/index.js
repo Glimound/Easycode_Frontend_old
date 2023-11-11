@@ -8,6 +8,7 @@ import event from './event'
 import layer from './layer'
 import snapshot from './snapshot'
 import lock from './lock'
+import database from './database'
 
 Vue.use(Vuex)
 
@@ -21,6 +22,7 @@ const data = {
         ...layer.state,
         ...snapshot.state,
         ...lock.state,
+        ...database.state,
 
         editMode: 'edit', // 编辑器模式 edit preview
         canvasStyleData: { // 页面全局数据
@@ -49,6 +51,7 @@ const data = {
         ...layer.mutations,
         ...snapshot.mutations,
         ...lock.mutations,
+        ...database.mutations,
 
         aceSetCanvasData(state, value) {
             state.canvasStyleData = value
@@ -129,6 +132,9 @@ const data = {
             }
         },
     },
+    actions: {
+        ...database.actions
+    }
 }
 
 export default new Vuex.Store(data)

@@ -13,6 +13,11 @@ const routes = [
         path: '/deploy/:appid',
         name: 'Deploy',
         component: () => import('@/views/Deploy'),
+    },
+    {
+        path: '/database-manager',
+        name: 'DatabaseManager',
+        component: () => import('@/views/DatabaseManager'),
     }
 ]
 
